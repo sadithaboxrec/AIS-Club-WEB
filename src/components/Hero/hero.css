@@ -1,0 +1,217 @@
+.hero-container{
+    margin-top: 10px;
+    height: 500px;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel {
+    position: relative;
+    z-index: 99;
+}
+.carousel,
+.carousel-inner,
+.carousel-item {
+    height: 100%;
+}
+
+/* Scale image to fill the height  */
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /*  ensures image fills without stretching */
+    object-position: top;
+}
+.carousel .carousel-item .carousel-caption {
+    z-index: 10;
+    bottom: 20%;
+}
+
+.carousel .carousel-item .carousel-caption h5 {
+    font-size: 55px;
+    color:#ffffff;
+    line-height: 140%;
+    text-align: center;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+}
+
+
+.carousel .carousel-item .carousel-caption h5 span {
+    display: block;
+}
+
+.carousel .carousel-item .carousel-caption .slider_des p {
+    font-size: 18px;
+    color: #ffffff;
+    line-height: 150%;
+    text-align: center;
+    font-weight: 500;
+}
+
+/*Dark look*/
+.carousel::after {
+    content: "";
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+.carousel .carousel-control-prev,
+.carousel .carousel-control-next {
+    z-index: 100;
+    position: absolute;
+    top: 45%;
+    width: 55px;
+    height: 55px;
+    display: block;
+    border-radius: 100%;
+    transition: box-shadow 0.3ms;
+    background: #636363;
+    opacity: 1;
+}
+
+.carousel .carousel-control-prev:hover,
+.carousel .carousel-control-next:hover {
+    box-shadow: 0 0 0 1rem rgba(255, 255, 255, 0.267);
+}
+
+.carousel .carousel-control-prev::after,
+.carousel .carousel-control-next::after,
+.carousel .carousel-control-prev::before,
+.carousel .carousel-control-next::before {
+    content: "";
+    position: absolute;
+    left: 43%;
+    background: #ffffff;
+    width: 0.4rem;
+    min-width: 3px;
+    border-radius: 3px;
+    height: 34%;
+}
+
+.carousel .carousel-control-prev {
+    left: 40px;
+}
+
+.carousel .carousel-control-prev::before {
+    transform: rotate(45deg);
+    top: 24%;
+}
+
+.carousel .carousel-control-prev::after {
+    transform: rotate(-45deg);
+    bottom: 24%;
+}
+
+.carousel .carousel-control-next {
+    right: 40px;
+}
+
+.carousel .carousel-control-next::before {
+    left: auto;
+    right: 43%;
+    transform: rotate(-45deg);
+    top: 24%;
+}
+
+.carousel .carousel-control-next::after {
+    left: auto;
+    right: 43%;
+    transform: rotate(45deg);
+    bottom: 24%;
+}
+
+.carousel .carousel-control-prev span,
+.carousel .carousel-control-next span {
+    display: none;
+}
+
+@media only screen and (max-width: 991px) {
+    .hero-container {
+        height: auto; /* Let content define height */
+    }
+    .carousel,
+    .carousel-inner,
+    .carousel-item {
+        height: auto;
+    }
+
+    .carousel-item img {
+        height: 350px;
+        object-fit: fill; /*  Fill container instead of cropping */
+    }
+
+    .carousel .carousel-item .carousel-caption {
+        bottom: 18%;
+    }
+
+    .carousel .carousel-item .carousel-caption h5 {
+        font-size: 35px;
+    }
+
+    .carousel .carousel-item .carousel-caption .slider_des p {
+        font-size: 16px;
+    }
+
+    .carousel .carousel-control-prev,
+    .carousel .carousel-control-next{
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .carousel .carousel-item img {
+        height: 350px;
+        object-fit: fill;
+    }
+
+    .carousel .carousel-item .carousel-caption {
+        bottom: 22%;
+        padding: 0 0 20px 0;
+        z-index: 9;
+    }
+
+    .carousel .carousel-item .carousel-caption h5 {
+        font-size: 26px;
+    }
+
+    .carousel .carousel-item .carousel-caption h5 span {
+        display: inline-block;
+    }
+
+    .carousel .carousel-item .carousel-caption .slider_des p {
+        font-size: 14px;
+    }
+
+    .carousel .carousel-control-next,
+    .carousel .carousel-control-prev {
+        width: 40px;
+        height: 40px;
+    }
+
+}
+
+@media only screen and (max-width: 420px) {
+
+    .carousel .carousel-item .carousel-caption {
+        right: 3%;
+        left: 3%;
+        bottom: 16%;
+        padding: 0 0 20px 0;
+        z-index: 9;
+    }
+
+    .carousel .carousel-control-next,
+    .carousel .carousel-control-prev {
+        width: 30px;
+        height: 30px;
+
+
+    }
+
+}
